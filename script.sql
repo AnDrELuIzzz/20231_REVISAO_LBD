@@ -186,6 +186,15 @@ CROSS JOIN Disciplina t2;
 
 -- Obter todas as combinações possíveis entre alunos e disciplinas, incluindo o nome do professor para cada disciplina.
 
-
-
 -- Obter todas as combinações possíveis entre todas as tabelas:Aluno, Disciplina e Matrícula.
+
+--INNER JOIN
+-- Obter os alunos matriculados em cada disciplina, juntamente com o nome da disciplina.
+SELECT t2.id_matricula, t1.nome, t3.nome
+FROM Disciplina t1
+    INNER JOIN Matricula t2 ON t1.id_disciplina = t2.id_disciplina
+    INNER JOIN Aluno t3 ON t3.id_aluno = t2.id_matricula ;
+-- Obter os detalhes de matrícula (ID da matrícula, nome do aluno, nome da disciplina) para todas as matrículas.
+
+-- Obter os nomes dos alunos e o total de disciplinas em que estão matriculados.
+
